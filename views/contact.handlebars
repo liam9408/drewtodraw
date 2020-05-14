@@ -1,0 +1,75 @@
+<div class="section padding-title-top padding-title-bottom background-white">
+    <div class="container">
+        <div class="twelve columns">
+            <div class="page-title parallax-fade-top">
+                <h1>Hello!</h1>
+                <div class="subtitle">Get in touch.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section padding-bottom background-white">
+    <div class="container">
+        <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+            <div class="three columns offset-by-three ">
+                <label for="name"> 
+                    <span class="error" id="err-name">please enter name</span>
+                </label>
+                <input name="name" id="name" type="text"   placeholder="Your Name: *"/>
+            </div>
+            <div class="three columns">
+                <label for="email"> 
+                    <span class="error" id="err-email">please enter e-mail</span>
+                    <span class="error" id="err-emailvld">e-mail is not a valid format</span>
+                </label>
+                <input name="email" id="email" type="text"  placeholder="E-Mail: *"/>
+            </div>
+            <div class="clear"></div>
+            <div class="six columns remove-top offset-by-three ">
+                <label for="message"></label>
+                <textarea name="message" id="message" placeholder="Tell Us Everything"></textarea>
+            </div>
+            <div class="clear"></div>
+            <div class="six columns remove-top offset-by-three ">
+                <div id="button-con"><button class="send_message button-effect button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">submit</button></div>					
+            </div>
+            <div class="clear"></div>	
+            <div class="error" id="err-form">There was a problem validating the form please check!</div>
+            <div class="error" id="err-timedout">The connection to the server timed out!</div>
+            <div class="error" id="err-state"></div>
+        </form>	
+
+        <div class="clear"></div>
+        <div id="ajaxsuccess">Successfully sent!!</div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="section background-white">
+    <div id="cd-google-map" data-scroll-reveal="enter bottom move 60px over 0.5s after 0.1s">
+        <div id="google-container"></div>
+        <div id="cd-zoom-in"></div>
+        <div id="cd-zoom-out"></div>
+    </div>
+</div>
+
+<div class="section padding-top-bottom background-white">
+    <div class="container">
+        <div class="six columns offset-by-three" data-scroll-reveal="enter bottom move 60px over 0.5s after 0.1s">
+            <div class="page-title-in center">
+                <h5>Stay tunned.</h5>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="six columns offset-by-three" data-scroll-reveal="enter bottom move 60px over 0.5s after 0.1s">
+            <div class="subscribe">
+                <input type="text" placeholder="your e-mail here"/>
+                <button data-lang="en"><span class="fa-long-arrow-right"></span></button>
+            </div>
+            <div class="subscribe-text">
+                <p>* we promise that we won´t spam you, never.</p>
+            </div>
+        </div>
+    </div>
+</div>

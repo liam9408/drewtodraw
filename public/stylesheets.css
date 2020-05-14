@@ -1,0 +1,19 @@
+#footer-contact {
+  text-align: left;
+}
+
+#footer-contact:hover {
+  color: black;
+}
+
+#headshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#headshot-image {
+  width: 50%;
+  margin-bottom: 80px;
+}
