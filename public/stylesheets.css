@@ -1,5 +1,7 @@
 #footer-contact {
   text-align: left;
+  font-weight: 400;
+  color: black;
 }
 
 #footer-contact:hover {
@@ -16,4 +18,9 @@
 #headshot-image {
   width: 50%;
   margin-bottom: 80px;
+}
+
+.has-children {
+  margin-bottom: 50px;
+  margin-top: 50px;
 }

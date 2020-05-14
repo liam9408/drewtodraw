@@ -853,7 +853,7 @@ a.curent-nav-color{
 	font-weight:300;
 	font-size: 23px;
 	line-height:31px;
-	color:#c0c0c0;
+	color:#000000;
 	padding-top:10px;
 	letter-spacing:1px;
 }
@@ -2771,7 +2771,7 @@ figure.vimeo a img, figure.youtube a img {
 	height: 25px;
 	display: none;
 	z-index: 99;
-	background-image:url('../images/up-arrow.png');
+	background-image:url('/images/c.png');
 	background-position:center center;
 	background-repeat: no-repeat;
 	background-size:25px 25px;
