@@ -593,7 +593,7 @@ a.curent-nav-color{
     transition: all 300ms linear; 
 }
 .cd-accordion-menu label{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding-top:2px;
 	padding-bottom:5px;
 	font-size: 24px;
@@ -603,7 +603,7 @@ a.curent-nav-color{
     cursor: default;
 }
 .cd-accordion-menu label a{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding-top:2px;
 	padding-bottom:5px;
 	font-size: 24px;
@@ -614,7 +614,7 @@ a.curent-nav-color{
 }
 .cd-accordion-menu a {
 	position:relative;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding: 0px;
 	font-size: 14px;
 	font-weight:400;
@@ -734,7 +734,7 @@ a.curent-nav-color{
 }
 .nav-social li a{
 	position:relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	font-size: 15px;
 	line-height:26px;
@@ -819,7 +819,7 @@ a.curent-nav-color{
 	padding-bottom:100px;
 }
 .padding-top-bottom-sep {
-	padding-top:50px;
+	padding-top:30px;
 	padding-bottom:160px;
 }
 .background-white {
@@ -849,7 +849,7 @@ a.curent-nav-color{
 }
 .page-title .subtitle{
 	text-align:center;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:300;
 	font-size: 23px;
 	line-height:31px;
@@ -881,7 +881,7 @@ a.curent-nav-color{
 }
 .page-title-in p{
 	text-align:left;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:300;
 	font-size: 26px;
 	line-height:34px;
@@ -919,7 +919,7 @@ a.curent-nav-color{
 	width:100%;
 	margin:0 auto;
 	width:100%;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:300;
 	font-size: 21px;
 	line-height:29px;
@@ -932,7 +932,7 @@ a.curent-nav-color{
 	width:100%;
 }
 .colord-text-top h1{
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	font-size: 22px;
 	line-height:30px;
@@ -948,8 +948,9 @@ a.curent-nav-color{
 	color: #000;
 	letter-spacing:0;
 	-webkit-text-fill-color: transparent;
-	background: -webkit-linear-gradient(transparent, transparent),
-             url('./assets/let.jpg') repeat;
+	/* background: -webkit-linear-gradient(transparent, transparent),
+			 url('./assets/let.jpg') repeat; */
+	background-color: black;
 	background: -o-linear-gradient(transparent, transparent);
 	-webkit-background-clip: text;
 	background-position:center center;
@@ -970,7 +971,7 @@ a.curent-nav-color{
 	transform: translateY(-50%);
 }
 .home-text-wrap h1{
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:800;
 	font-size: 46px;
 	line-height:50px;
@@ -1007,7 +1008,7 @@ a.curent-nav-color{
 #owl-about .item h4{
 	text-align:center;
 	margin:0 auto;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color:#000;
 	font-weight:300;
 	font-size: 26px; 
@@ -1111,7 +1112,7 @@ a.curent-nav-color{
 }
 .team-social li a{
 	position:relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:500;
 	font-size: 13px;
 	line-height:20px;
@@ -1458,6 +1459,11 @@ figure.vimeo a img, figure.youtube a img {
 	margin-left:-1px;
 	-webkit-transform: translate3d(1px,0,0);
 	transform: translate3d(1px,0,0);
+	/* width: 1032px;
+	height: 1200px; */
+}
+.portfolio-box-1:hover{
+background: dodgerblue
 }
 .portfolio-box-1.full-width{
 	width:calc(100% - 30px);
@@ -1524,7 +1530,7 @@ figure.vimeo a img, figure.youtube a img {
 	position:absolute;
 	left:25px;
 	bottom:40px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	letter-spacing:1px;
 	font-weight:500;
 	font-size: 18px; 
@@ -1692,7 +1698,7 @@ figure.vimeo a img, figure.youtube a img {
 	margin-right:30px;
 	width:180px;
 	height:120px;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	letter-spacing:2px;
 	text-align:right;
@@ -1718,7 +1724,7 @@ figure.vimeo a img, figure.youtube a img {
 	font-size: 50px;
 	line-height:160px;
     vertical-align: text-bottom;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	letter-spacing:2px;
 	text-align:left;
@@ -1738,7 +1744,7 @@ figure.vimeo a img, figure.youtube a img {
 	z-index:2;
 	width:100%;
 	opacity:0;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	font-size: 13px;
 	line-height:20px;
@@ -1945,7 +1951,7 @@ figure.vimeo a img, figure.youtube a img {
 	text-align:left;
 	display:block;
 	float:left;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: #999; 
 	margin-bottom:10px;
 }
@@ -1964,7 +1970,7 @@ figure.vimeo a img, figure.youtube a img {
 	text-align:right;
 	display:block;
 	float:right;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: #999; 
 	margin-bottom:10px;
 } 
@@ -1977,7 +1983,7 @@ figure.vimeo a img, figure.youtube a img {
 	display:block;
 	width:100%;
 	color: #212121;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	text-align:left;
 	font-size: 15px;
@@ -2018,7 +2024,7 @@ figure.vimeo a img, figure.youtube a img {
 	width:calc(100% - 40px);
 	padding-left:20px;
 	padding-right:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	letter-spacing:1px;
 	font-size: 13px;
@@ -2102,7 +2108,7 @@ figure.vimeo a img, figure.youtube a img {
 	margin-bottom:6px;
 }
 .sidebar-list-one li a{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height:22px;
 	font-weight:400;
@@ -2145,7 +2151,7 @@ figure.vimeo a img, figure.youtube a img {
 	margin-bottom:18px;
 }
 .sidebar-list-two li a{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 13px;
 	line-height:13px;
 	font-weight:500;
@@ -2189,7 +2195,7 @@ figure.vimeo a img, figure.youtube a img {
 	padding-left:110px;
 	font-style: italic;
 	padding-top:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 13px;
 	line-height:13px;
 	padding-bottom:3px;
@@ -2205,7 +2211,7 @@ figure.vimeo a img, figure.youtube a img {
 }
 .comment a{ 
 	position:relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size:13px;
 	line-height:13px;
 	font-weight:400;
@@ -2241,7 +2247,7 @@ figure.vimeo a img, figure.youtube a img {
  
 #ajax-form {
 	width: 100%;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 10px;
 	line-height:14px;
 	color:#101010;
@@ -2249,7 +2255,7 @@ figure.vimeo a img, figure.youtube a img {
 }
 #ajax-form label {
 	display: block;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height:30px;
 }
@@ -2258,7 +2264,7 @@ figure.vimeo a img, figure.youtube a img {
 	width:calc(100% - 40px);
 	padding-left:20px;
 	padding-right:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	letter-spacing:1px;
 	font-size: 13px;
@@ -2274,7 +2280,7 @@ figure.vimeo a img, figure.youtube a img {
 	width:calc(100% - 40px);
 	padding-left:20px;
 	padding-right:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	letter-spacing:1px;
 	font-size: 13px;
@@ -2291,7 +2297,7 @@ figure.vimeo a img, figure.youtube a img {
 	border-bottom:1px solid rgba(200,200,200,.7);
 }
 .error {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height:30px;
 	letter-spacing:1px;
@@ -2301,7 +2307,7 @@ figure.vimeo a img, figure.youtube a img {
 #ajaxsuccess {
 	background: #f2f2f2;
 	color:#101010;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	line-height:60px;
 	height:60px;
 	display: none;
@@ -2498,7 +2504,7 @@ figure.vimeo a img, figure.youtube a img {
 	width:calc(100% - 40px);
 	padding-left:20px;
 	padding-right:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	letter-spacing:1px;
 	font-size: 13px;
@@ -2646,7 +2652,7 @@ figure.vimeo a img, figure.youtube a img {
 
 .footer p{
 	text-align:left;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	font-size: 15px;
 	line-height:26px;
@@ -2703,7 +2709,7 @@ figure.vimeo a img, figure.youtube a img {
 }
 .footer-social li a{
 	position:relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
 	font-size: 15px;
 	line-height:26px;
@@ -2789,7 +2795,7 @@ figure.vimeo a img, figure.youtube a img {
 ================================================== */
 
 	.tipper {background-color: transparent; height: 1px; left: -99999px; position: absolute; pointer-events: none; top: -99999px; width: 1px;z-index:100000; }
-	.tipper .tipper-content { background-color: transparent;color:#000; font-weight:700;letter-spacing:0; border-radius: 3px; display: block; float: left; font-family: 'Work Sans', sans-serif; font-size: 18px; margin: 0; padding: 6px 20px; position: relative; white-space: nowrap; }
+	.tipper .tipper-content { background-color: transparent;color:#000; font-weight:700;letter-spacing:0; border-radius: 3px; display: block; float: left; font-family: 'Montserrat', sans-serif; font-size: 18px; margin: 0; padding: 6px 20px; position: relative; white-space: nowrap; }
 	.tipper .tipper-content strong {background-color:#fff;color:#313131; padding:10px 20px;font-weight:700;}
 	.tipper .tipper-content em {position:absolute;bottom:-20px;right:0;background-color:#fff; padding:3px 10px;z-index:200;font-family: 'Crimson Text', serif;font-weight:600;font-size: 16px;}
 	.tipper .tipper-caret { display: block; height: 11px;  position: absolute; width: 100%; font-weight:700; }
