@@ -399,5 +399,5 @@ input::-moz-focus-inner {
   color: dodgerblue; /* Safari */
 }
 ::-moz-selection {
-  color: #fff; /* Firefox */
+  color: dodgerblue; /* Firefox */
 }

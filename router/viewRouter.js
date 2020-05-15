@@ -1,5 +1,3 @@
-const gallery = require("../public/photos");
-
 module.exports = (express) => {
   const router = express.Router();
 

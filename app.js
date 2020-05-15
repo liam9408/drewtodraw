@@ -8,7 +8,6 @@ const fs = require("fs");
 const path = require("path");
 const hbs = require("express-handlebars");
 const pg = require("pg");
-const gallery = require("./public/photos");
 
 //-------------- General package setup
 app.use(bodyParser.urlencoded({ extended: false }));
