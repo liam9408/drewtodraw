@@ -47,12 +47,20 @@ app.set("view engine", "handlebars");
 //   })
 // );
 // setupPassport(app);
+//-------------- image setup
+const ImageService = require('./services/imageService');
+const imageRouter = require('./router/imageRouter');
+const imageService = new ImageService(knex);
+//-------------- text setup
+const TextService = require('./services/textService');
+const textRouter = require('./router/textRouter');
+const textService = new TextService(knex);
 
 //-------------- Routers routing
 app.use("/", ViewRouter);
 // app.use("/", loginRouter);
-// app.use("/api/projects", new projectRouter(projectService).router());
-// app.use("/api/tasks", new taskRouter(taskService).router());
+ app.use("/images", new imageRouter(imageService).router());
+ app.use("/texts", new textRouter(textService).router());
 // app.use("/api/subtasks", new subtaskRouter(subtaskService).router());
 
 const options = {
