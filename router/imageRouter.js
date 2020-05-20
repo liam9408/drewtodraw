@@ -13,7 +13,7 @@ class ImageRouter {
     let router = express.Router();
     router.get('/get-work', this.getWork.bind(this));
     router.get('/get-aboutme', this.getAboutMe.bind(this));
-    // router.put('/edit-homepage', this.editHome.bind(this));
+    router.put('/edit-work', this.editWork.bind(this));
     // router.put('/edit-aboutme', this.editAboutMe.bind(this));
     return router;
   }
@@ -26,6 +26,13 @@ class ImageRouter {
   getAboutMe(req, res) {
     return this.imageService
       .showAboutMe()
+      .then((data) => res.json(data))
+      .catch((err) => res.status(500).json(err));
+  }
+  editWork(req, res) {
+    let data = JSON.parse(req.body.data);
+    return this.imageService
+      .editPhoto(req.files, data.id, data.tag, data.year)
       .then((data) => res.json(data))
       .catch((err) => res.status(500).json(err));
   }
