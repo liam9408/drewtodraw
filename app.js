@@ -61,7 +61,7 @@ const textService = new TextService(knex);
 
 //-------------- Routers routing
 app.use('/', ViewRouter);
-app.use('/', loginRouter);
+app.use('/login', loginRouter);
 app.use('/images', new imageRouter(imageService).router());
 app.use('/texts', new textRouter(textService).router());
 // app.use("/api/subtasks", new subtaskRouter(subtaskService).router());

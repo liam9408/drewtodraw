@@ -21,6 +21,14 @@ module.exports = express => {
       failureRedirect: '/login'
     })
   );
+
+  router.post(
+    '/signup',
+    passport.authenticate('local-signup', {
+      successRedirect: '/edit',
+      failureRedirect: '/login'
+    })
+  );
 //double check ERROR URL
 //   router.get('/error', (req, res) => {
 //     res.send('You are not logged in!');

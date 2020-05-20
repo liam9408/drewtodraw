@@ -17,7 +17,7 @@ module.exports = passport => {
     'local-login',
     new LocalStrategy(async (email, password, done) => {
       try {
-        let users = await knex('user').where({ email: email });
+        let users = await knex('users').where({ email: email });
         if (users.length == 0) {
           return done(null, false, { message: 'Incorrect credentials' });
         }
@@ -44,7 +44,7 @@ module.exports = passport => {
       },
       async (req, email, password, done) => {
       try {
-        let users = await knex('user').where({ email: email });
+        let users = await knex('users').where({ email: email });
         if (users.length > 0) {
           return done(null, false, { message: 'Email already taken' });
         }

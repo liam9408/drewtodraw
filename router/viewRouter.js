@@ -2,14 +2,14 @@ module.exports = (express) => {
   const router = express.Router();
 
   // // define middleware
-  // function isLoggedIn(req, res, next) {
-  //   // check if user is currently logged in
-  //   if (req.isAuthenticated()) {
-  //     return next();
-  //   }
-  //   // if not logged in, redirect to the landing page
-  //   res.render("login");
-  // }
+  function isLoggedIn(req, res, next) {
+    // check if user is currently logged in
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    // if not logged in, redirect to the landing page
+    res.render("login");
+  }
 
   router.get("/", (req, res) => {
     res.render("work");
@@ -27,7 +27,7 @@ module.exports = (express) => {
     res.render("login");
   });
 
-  router.get("/edit", (req, res) => {
+  router.get("/edit",isLoggedIn, (req, res) => {
     res.render("edit");
   });
 
