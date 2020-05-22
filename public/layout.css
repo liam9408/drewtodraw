@@ -814,7 +814,7 @@ a.curent-nav-color{
 	padding-bottom:10px;
 }
 .padding-top-bottom {
-	padding-top:100px;
+	/* padding-top:100px; */
 	padding-bottom:100px;
 }
 .padding-top {
@@ -824,8 +824,8 @@ a.curent-nav-color{
 	padding-bottom:100px;
 }
 .padding-top-bottom-sep {
-	padding-top:30px;
-	padding-bottom:160px;
+	/* padding-top:30px; */
+	padding-bottom:100px;
 }
 .background-white {
 	background-color:#ffffff;
