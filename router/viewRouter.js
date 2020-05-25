@@ -1,3 +1,13 @@
+
+//-------------- Setting up required packages
+const path = require('path');
+const knexConfig = require('../knexfile').development;
+const knex = require('knex')(knexConfig);
+
+//-------------- Setting up required services
+const ImageService = require('../services/imageService');
+const imageService = new ImageService(knex);
+
 module.exports = (express) => {
   const router = express.Router();
 
@@ -27,8 +37,13 @@ module.exports = (express) => {
     res.render("login");
   });
 
-  router.get("/edit",isLoggedIn, (req, res) => {
-    res.render("edit");
+  router.get("/edit",isLoggedIn, async (req, res) => {
+    let workImages = await imageService.showWork()
+    let aboutMeImage = await imageService.showAboutMe()
+    res.render("edit",{
+      workImages: workImages,
+      aboutMeImage: aboutMeImage,
+    });
   });
 
   return router;
