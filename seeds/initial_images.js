@@ -15,7 +15,7 @@ exports.seed = function(knex) {
         {id: 8, image_path: 'assets/8.jpg', description:'Kitchen', year:'2015'},
         {id: 9, image_path: 'assets/9.jpg', description:'Staircase', year:'2020'},
         {id: 10, image_path: 'assets/10.jpg', description:'Office', year:'2017'},
-        {id: 11, image_path: 'assets/headshot.jpg', description:'About Me', year:'2020'},
+        {id: 11, image_path: 'assets/11.jpg', description:'About Me', year:'2020'},
       ]);
     });
 };

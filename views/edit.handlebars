@@ -23,7 +23,8 @@
                             <input id=year{{id}} type='text' name="year" class="form-control" placeholder={{year}} />
                         </label>
                         <label>
-                            <input id=year{{id}} type='text' name="id" class="form-control" value={{id}} style="display:none;"/>
+                            <input id=id{{id}} type='text' name="id" class="form-control" value={{id}}
+                                style="display:none;" />
                         </label>
                         <input id={{id}} type='submit' value="Upload" class="btn btn-primary submit" />
                     </div>
@@ -34,17 +35,18 @@
             {{#each aboutMeImage}}
             <div class="upload-pictures" id={{id}}>
                 <div class="edit-picture">
-                    <img src=../{{image_path}} alt="" class="image1">
+                    <img id=img{{id}} src=../{{image_path}} alt="" class="image1">
                 </div>
-                <form class="form" action="/file" method="POST" encType="multipart/form-data">
+                <form id={{id}}form class="form" action="/images/edit-work" method="POST" encType="multipart/form-data">
                     <div class="form-group">
                         <label for="hero-text">About Me</label>
                         <label>
-                            <input id={{id}} type='file' name="file" class="form-control" />
+                            <input id=upload{{id}} type='file' name="file" class="form-control input" />
                         </label>
-                        {{!-- <label>
-                    <input id="tag10" type='text' name="tag" class="form-control" view="hidden" />
-                </label> --}}
+                        <label>
+                            <input id=id{{id}} type='text' name="id" class="form-control" value={{id}}
+                                style="display:none;" />
+                        </label>
                         <input id={{id}} type='submit' value="Upload" class="btn btn-primary submit" />
                     </div>
                 </form>
@@ -60,22 +62,25 @@
 
         <div id="edit-body-text">
             <div class="hero-text">
-                <form class="form" action="/file" method="POST" encType="multipart/form-data">
+                <form class="form homeTextForm" action="/texts/edit-homepage" method="POST"
+                    encType="multipart/form-data">
                     <div class="form-group-text">
                         <label for="hero-text">Homepage text:</label><br>
-                        <input id="hero-text" type='text' name="hero" class="form-control"
-                            placeholder="put text here" />
-                        <input id="submit1" type='submit' value="Upload" class="btn btn-primary" />
+                        <input id="homeText" type='text' name="content" class="form-control"
+                            placeholder="Home Screen Text Here..." />
+                        <input id="submitHome" type='submit' value="Upload" class="btn btn-primary" />
                     </div>
                 </form>
             </div>
             <div class="about-text">
-                <form class="form" action="/file" method="POST" encType="multipart/form-data">
+                <form class="form aboutTextForm" action="/texts/edit-aboutme" method="POST"
+                    encType="multipart/form-data">
                     <div class="form-group-text">
                         <label for="about-text">About text:</label><br>
-                        <textarea id="about-text" type='text' name="about" rows="10" cols="50" class="form-control"
-                            placeholder="put text here"></textarea>
-                        <input id="submit1" type='submit' value="Upload" class="btn btn-primary" />
+                        <textarea id="aboutText" type='text' name="content" rows="10" cols="50" class="form-control"
+                            placeholder="About Me Text Here..."></textarea>
+                        <br />
+                        <input id="submitAbout" type='submit' value="Upload" class="btn btn-primary" />
                     </div>
                 </form>
             </div>
@@ -83,3 +88,5 @@
 
 
     </div>
+
+    <div id="snackbar">Some text some message..</div>
