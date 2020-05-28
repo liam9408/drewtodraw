@@ -36,7 +36,7 @@ class ImageRouter {
   editWork(req, res) {
     return this.imageService
       .editPhoto(req.files, req.body.id, req.body.tag, req.body.year)
-      .then((data) => res.redirect('back'))
+      .then((data) => res.status(204).send())
       .catch((err) => res.status(500).json(err));
   }
 }

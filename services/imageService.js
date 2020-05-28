@@ -8,7 +8,10 @@ class AttractionService {
   }
   showWork() {
     return new Promise(async (resolve, reject) => {
-      let work = this.knex('images').select('*').where('id', '<', 11).orderBy('id','asc');
+      let work = this.knex('images')
+        .select('*')
+        .where('id', '<', 11)
+        .orderBy('id', 'asc');
       work
         .then((data) => {
           resolve(data);
@@ -41,7 +44,8 @@ class AttractionService {
         let files = fs.readdirSync('./public/assets/');
         let oldFile = '';
         files.forEach((name) => {
-          if (name.includes(id)) {
+          let fileName = name.split('.')[0];
+          if (id == fileName) {
             oldFile = name;
           }
         });
@@ -57,31 +61,44 @@ class AttractionService {
         let files = fs.readdirSync('./public/assets/');
         let oldFile = '';
         files.forEach((name) => {
-          if (name.includes(id)) {
+          let fileName = name.split('.')[0];
+          if (id == fileName) {
             oldFile = name;
           }
         });
         imagePath = `assets/${oldFile}`;
       }
-      let updateInfo = this.knex('images').where('id', id).update({
-        image_path: imagePath,
-        description: tag,
-        year: year,
-      }).returning(['id', 'image_path', 'description', 'year']);
-      if (tag === '' && year === '') {
-        updateInfo = this.knex('images').where('id', id).update({
-          image_path: imagePath,
-        }).returning(['id', 'image_path', 'description', 'year']);
-      } else if (year === '') {
-        updateInfo = this.knex('images').where('id', id).update({
+      let updateInfo = this.knex('images')
+        .where('id', id)
+        .update({
           image_path: imagePath,
           description: tag,
-        }).returning(['id', 'image_path', 'description', 'year']);
-      } else if (tag === '') {
-        updateInfo = this.knex('images').where('id', id).update({
-          image_path: imagePath,
           year: year,
-        }).returning(['id', 'image_path', 'description', 'year']);
+        })
+        .returning(['id', 'image_path', 'description', 'year']);
+      if (tag === '' && year === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
+      } else if (year === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+            description: tag,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
+      } else if (tag === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+            year: year,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
       }
 
       updateInfo
