@@ -1,20 +1,24 @@
 // Require the necessary modules for this file.
 const express = require('express');
-//const authClass = require('../authentication/initPassport')();
 
-// Setup a JobsServices so we can use it later on
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.sendStatus(403);
+}
+
 class ImageRouter {
   constructor(imageService) {
     this.imageService = imageService;
   }
 
-  // Binding the stuff to the stuff
+
   router() {
     let router = express.Router();
     router.get('/get-work', this.getWork.bind(this));
     router.get('/get-aboutme', this.getAboutMe.bind(this));
-    router.put('/edit-work', this.editWork.bind(this));
-    // router.put('/edit-aboutme', this.editAboutMe.bind(this));
+    router.post('/edit-work', isLoggedIn, this.editWork.bind(this));
     return router;
   }
   getWork(req, res) {
@@ -30,10 +34,9 @@ class ImageRouter {
       .catch((err) => res.status(500).json(err));
   }
   editWork(req, res) {
-    let data = JSON.parse(req.body.data);
     return this.imageService
-      .editPhoto(req.files, data.id, data.tag, data.year)
-      .then((data) => res.json(data))
+      .editPhoto(req.files, req.body.id, req.body.tag, req.body.year)
+      .then((data) => res.status(204).send())
       .catch((err) => res.status(500).json(err));
   }
 }

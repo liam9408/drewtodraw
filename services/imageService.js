@@ -8,7 +8,10 @@ class AttractionService {
   }
   showWork() {
     return new Promise(async (resolve, reject) => {
-      let work = this.knex('images').select('*').where('id', '<', 11);
+      let work = this.knex('images')
+        .select('*')
+        .where('id', '<', 11)
+        .orderBy('id', 'asc');
       work
         .then((data) => {
           resolve(data);
@@ -35,13 +38,14 @@ class AttractionService {
     return new Promise(async (resolve, reject) => {
       let imagePath = '';
       if (file) {
-        let fileType = file.image.name.split('.');
+        let fileType = file.file.name.split('.');
         fileType = fileType[fileType.length - 1];
-        file.image.name = id + '.' + fileType;
+        file.file.name = id + '.' + fileType;
         let files = fs.readdirSync('./public/assets/');
         let oldFile = '';
         files.forEach((name) => {
-          if (name.includes(id)) {
+          let fileName = name.split('.')[0];
+          if (id == fileName) {
             oldFile = name;
           }
         });
@@ -51,42 +55,55 @@ class AttractionService {
             unit.mv(`./public/assets/${newFileName}`);
           });
         };
-        move(file.image, file.image.name);
-        imagePath = `assets/${file.image.name}`;
+        move(file.file, file.file.name);
+        imagePath = `assets/${file.file.name}`;
       } else {
         let files = fs.readdirSync('./public/assets/');
         let oldFile = '';
         files.forEach((name) => {
-          if (name.includes(id)) {
+          let fileName = name.split('.')[0];
+          if (id == fileName) {
             oldFile = name;
           }
         });
         imagePath = `assets/${oldFile}`;
       }
-      let updateInfo = this.knex('images').where('id', id).update({
-        image_path: imagePath,
-        description: tag,
-        year: year,
-      });
-      if (tag === '' && year === '') {
-        updateInfo = this.knex('images').where('id', id).update({
-          image_path: imagePath,
-        });
-      } else if (year === '') {
-        updateInfo = this.knex('images').where('id', id).update({
+      let updateInfo = this.knex('images')
+        .where('id', id)
+        .update({
           image_path: imagePath,
           description: tag,
-        });
-      } else if (tag === '') {
-        updateInfo = this.knex('images').where('id', id).update({
-          image_path: imagePath,
           year: year,
-        });
+        })
+        .returning(['id', 'image_path', 'description', 'year']);
+      if (tag === '' && year === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
+      } else if (year === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+            description: tag,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
+      } else if (tag === '') {
+        updateInfo = this.knex('images')
+          .where('id', id)
+          .update({
+            image_path: imagePath,
+            year: year,
+          })
+          .returning(['id', 'image_path', 'description', 'year']);
       }
 
       updateInfo
-        .then(() => {
-          resolve({ success: 1, msg: 'Image changed' });
+        .then((data) => {
+          resolve(data);
         })
         .catch((err) => {
           reject({ success: 0, error: 'Image could not be changed', msg: err });
