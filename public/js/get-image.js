@@ -1,42 +1,56 @@
 $(() => {
   console.log("get image");
 
-  const imageOne = document.getElementById("#image-1");
-  const imageTwo = document.getElementById("#image-2");
-  const imageThree = document.getElementById("#image-3");
-  const imageFour = document.getElementById("#image-4");
-  const imageFive = document.getElementById("#image-5");
-  const imageSix = document.getElementById("#image-6");
-  const imageSeven = document.getElementById("#image-7");
-  const imageEight = document.getElementById("#image-8");
-  const imageNine = document.getElementById("#image-9");
-  const imageTen = document.getElementById("#image-10");
-
   const port = "https://localhost:8443";
 
   const getWork = () => {
-    return new Promise((resolve, reject) => {
-      let data = $.get(port + "/images/get-work");
+    $.ajax({
+      url: `${port + "/images/get-work"} `,
+      success: function (res) {
+        const imageOnePath = res[0].image_path;
+        const imageTwoPath = res[1].image_path;
+        const imageThreePath = res[2].image_path;
+        const imageFourPath = res[3].image_path;
+        const imageFivePath = res[4].image_path;
+        const imageSixPath = res[5].image_path;
+        const imageSevenPath = res[6].image_path;
+        const imageEightPath = res[7].image_path;
+        const imageNinePath = res[8].image_path;
+        const imageTenPath = res[9].image_path;
 
-      data
-        .then((res) => {
-          resolve(res);
-          const imageOnePath = res[0].imagePath;
-          const imageTwoPath = res[1].imagePath;
-          const imageThreePath = res[2].imagePath;
-          const imageFourPath = res[3].imagePath;
-          const imageFivePath = res[4].imagePath;
-          const imageSixPath = res[5].imagePath;
-          const imageSevenPath = res[6].imagePath;
-          const imageEightPath = res[7].imagePath;
-          const imageNinePath = res[8].imagePath;
-          const imageTenPath = res[9].imagePath;
+        $("#image-1").attr("src", imageOnePath);
+        $("#image-2").attr("src", imageTwoPath);
+        $("#image-3").attr("src", imageThreePath);
+        $("#image-4").attr("src", imageFourPath);
+        $("#image-5").attr("src", imageFivePath);
+        $("#image-6").attr("src", imageSixPath);
+        $("#image-7").attr("src", imageSevenPath);
+        $("#image-8").attr("src", imageEightPath);
+        $("#image-9").attr("src", imageNinePath);
+        $("#image-10").attr("src", imageTenPath);
 
-          imageOne.attr("src", imageTenPath);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+        var tags = [];
+        var tagsIDs = [
+          "#tag1",
+          "#tag2",
+          "#tag3",
+          "#tag4",
+          "#tag5",
+          "#tag6",
+          "#tag7",
+          "#tag8",
+          "#tag9",
+          "#tag10",
+        ];
+
+        for (let i of res) {
+          tags.push(i.description);
+        }
+
+        for (let i in tagsIDs) {
+          $(tagsIDs[i]).html(tags[i]);
+        }
+      },
     });
   };
 
