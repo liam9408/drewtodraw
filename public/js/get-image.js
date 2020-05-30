@@ -54,5 +54,15 @@ $(() => {
     });
   };
 
+  const getAboutMe = () => {
+    $.ajax({
+      url: `${port + "/texts/get-aboutme"} `,
+      success: function (res) {
+        $("#about-me-body").html(res);
+      },
+    });
+  };
+
   getWork();
+  getAboutMe();
 });
