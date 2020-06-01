@@ -1,6 +1,4 @@
 $(() => {
-  console.log("get image");
-
   const port = "https://localhost:8443";
 
   const getWork = () => {

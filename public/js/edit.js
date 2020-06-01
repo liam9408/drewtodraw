@@ -85,7 +85,7 @@ $('.submit').click(async (event) => {
             $(`#year${id}`).attr('placeholder',year)
           }
           var toast = document.getElementById('snackbar');
-          toast.innerHTML = `Photo ${id} has been modified!`;
+          toast.innerHTML = `Picture ${id} has been modified!`;
           toast.className = 'show';
           setTimeout(function () {
             toast.className = toast.className.replace('show', '');

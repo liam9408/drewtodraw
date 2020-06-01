@@ -66,7 +66,7 @@
                     encType="multipart/form-data">
                     <div class="form-group-text">
                         <label for="hero-text">Homepage text:</label><br>
-                        <input id="homeText" type='text' name="content" class="form-control"
+                        <input id="homeText" type='text' name="content" class="form-control" maxlength="40"
                             placeholder="Home Screen Text Here..." />
                         <input id="submitHome" type='submit' value="Upload" class="btn btn-primary" />
                     </div>
@@ -77,7 +77,7 @@
                     encType="multipart/form-data">
                     <div class="form-group-text">
                         <label for="about-text">About text:</label><br>
-                        <textarea id="aboutText" type='text' name="content" rows="10" cols="50" class="form-control"
+                        <textarea id="aboutText" type='text' name="content" rows="10" cols="50" class="form-control" maxlength="750"
                             placeholder="About Me Text Here..."></textarea>
                         <br />
                         <input id="submitAbout" type='submit' value="Upload" class="btn btn-primary" />
