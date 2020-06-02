@@ -8,7 +8,7 @@ class AttractionService {
   }
   showHome() {
     return new Promise(async (resolve, reject) => {
-      let homeInfo = this.knex('texts').select('content').where('id', 1);
+      let homeInfo = this.knex('texts').select('content').where('id', '<', 3);
       homeInfo
         .then((data) => {
           resolve(data);
@@ -20,7 +20,7 @@ class AttractionService {
   }
   showAboutMe() {
     return new Promise(async (resolve, reject) => {
-      let aboutInfo = this.knex('texts').select('content').where('id', 2);
+      let aboutInfo = this.knex('texts').select('content').where('id', 3);
       aboutInfo
         .then((data) => {
           resolve(data);
@@ -30,14 +30,19 @@ class AttractionService {
         });
     });
   }
-  editHome(content) {
+  editHome(contentTop, contentBottom) {
     return new Promise(async (resolve, reject) => {
-      let aboutInfo = this.knex('texts')
+      let editTop = this.knex('texts')
         .where('id', 1)
-        .update('content', content);
-      aboutInfo
+        .update('content', contentTop);
+      let editBottom = this.knex('texts')
+        .where('id', 2)
+        .update('content', contentBottom);
+      editTop
         .then(() => {
-          resolve({ success: 1, success: 'home page updated' });
+          editBottom.then(() => {
+            resolve({ success: 1, success: 'home page updated' });
+          });
         })
         .catch((err) => {
           reject({ success: 0, error: 'home page could not be updated' });
@@ -48,7 +53,7 @@ class AttractionService {
   editAboutMe(content) {
     return new Promise(async (resolve, reject) => {
       let aboutInfo = this.knex('texts')
-        .where('id', 2)
+        .where('id', 3)
         .update('content', content);
       aboutInfo
         .then(() => {

@@ -24,7 +24,7 @@ class TextRouter {
   getHome(req, res) {
     return this.textService
       .showHome()
-      .then((data) => res.json(data[0].content))
+      .then((data) => res.json(data))
       .catch((err) => res.status(500));
   }
   getAboutMe(req, res) {
@@ -35,7 +35,7 @@ class TextRouter {
   }
   editHome(req, res) {
     return this.textService
-      .editHome(req.body.content)
+      .editHome(req.body.firstLine, req.body.secondLine)
       .then(() => res.status(204).send())
       .catch((err) => res.status(500));
   }
