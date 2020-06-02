@@ -8,7 +8,7 @@ class AttractionService {
   }
   showHome() {
     return new Promise(async (resolve, reject) => {
-      let homeInfo = this.knex('texts').select('content').where('id', '<', 3);
+      let homeInfo = this.knex('texts').select('id','content').where('id', '<', 3).orderBy('id','ASC');
       homeInfo
         .then((data) => {
           resolve(data);
