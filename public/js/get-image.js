@@ -61,6 +61,25 @@ $(() => {
     });
   };
 
+  const getHomePage = () => {
+    $.ajax({
+      url: `${port + "/texts/get-homepage"} `,
+      success: function (res) {
+        console.log(res);
+        $("#hero-text").html(
+          "<span>" +
+            res[0].content +
+            "</span>" +
+            "<br>" +
+            "<span>" +
+            res[1].content +
+            "</span>"
+        );
+      },
+    });
+  };
+
   getWork();
   getAboutMe();
+  getHomePage();
 });
