@@ -19,7 +19,7 @@
 .sidebar h6,
 .comment a,
 .for-comment-top h6 {
-  color: dodgerblue;
+  color: SILVER;
 }
 
 #royal_preloader.royal_preloader_progress .royal_preloader_meter,
@@ -36,42 +36,42 @@
 #owl-blog-slider.owl-theme .owl-controls .owl-page span:hover,
 .sidebar-search button,
 .sidebar-list-two li a:hover {
-  background-color: dodgerblue;
+  background-color: SILVER;
 }
 figure.vimeo a:before,
 figure.youtube a:before {
-  border-left: 10px solid dodgerblue;
+  border-left: 10px solid SILVER;
 }
 figure.vimeo:hover a:after,
 figure.youtube:hover a:after {
-  background: dodgerblue;
+  background: SILVER;
 }
 #ajax-form textarea:focus,
 #ajax-form input:focus,
 #ajax-form textarea:active,
 #ajax-form input:active {
-  border-bottom: 1px solid dodgerblue;
+  border-bottom: 1px solid SILVER;
 }
 .subscribe input:active,
 .subscribe input:focus {
-  border-bottom: 1px solid dodgerblue;
+  border-bottom: 1px solid SILVER;
 }
 .post-wrapper blockquote {
-  border-left: 3px solid dodgerblue;
+  border-left: 3px solid SILVER;
 }
 .sidebar-search input:active,
 .sidebar-search input:focus {
-  border-bottom: 1px solid dodgerblue;
+  border-bottom: 1px solid SILVER;
 }
 .sidebar-list-one li:before {
-  border: 1px solid dodgerblue;
+  border: 1px solid SILVER;
 }
 .sidebar-list-two li a:hover {
-  border: 2px solid dodgerblue;
+  border: 2px solid SILVER;
 }
 ::selection {
-  background-color: dodgerblue;
+  background-color: SILVER;
 }
 ::-moz-selection {
-  background-color: dodgerblue;
+  background-color: SILVER;
 }

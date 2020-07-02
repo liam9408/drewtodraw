@@ -151,7 +151,7 @@ table {
 ================================================== */
 body {
   background: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 23px;
@@ -174,7 +174,7 @@ h4,
 h5,
 h6 {
   color: #414141;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -396,8 +396,8 @@ input::-moz-focus-inner {
   height: 0;
 }
 ::selection {
-  color: dodgerblue; /* Safari */
+  color: SILVER; /* Safari */
 }
 ::-moz-selection {
-  color: dodgerblue; /* Firefox */
+  color: SILVER; /* Firefox */
 }

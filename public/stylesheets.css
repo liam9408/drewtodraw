@@ -48,7 +48,7 @@
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: dodgerblue;
+  background-color: SILVER;
 }
 
 .overlay1:hover {
@@ -74,6 +74,9 @@
   }
   .padding-title-bottom {
     padding-bottom: 20px;
+  }
+  .cd-primary-nav {
+    width: 100%;
   }
 }
 
@@ -104,10 +107,11 @@
 
 .nav-items {
   font-size: 48px;
+  letter-spacing: -3px;
 }
 
 .nav-items:hover {
-  color: dodgerblue;
+  color: SILVER;
   -webkit-transition: all 300ms linear;
   -moz-transition: all 300ms linear;
   -o-transition: all 300ms linear;
@@ -201,7 +205,7 @@
   text-decoration: none;
   margin-left: 5px;
   font-size: 13px;
-  color: dodgerblue;
+  color: SILVER;
 }
 
 .signupTag:hover {
@@ -214,5 +218,38 @@
 }
 
 #hero-text {
-  margin-top: 120px;
+  /* position: absolute; */
+  /* margin-top: 350px; */
+  color: white;
+  font-size: 70px;
+  line-height: 85px;
+  letter-spacing: -3px;
+}
+
+#hero-flex {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-block-1 {
+  width: 20px;
+  height: 20px;
+}
+
+#hero {
+  background-image: url("./assets/hero.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+#nav-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

@@ -1,12 +1,12 @@
-$('.input').change((event) => {
-  const id = event.target.id.split('upload')[1];
+$(".input").change((event) => {
+  const id = event.target.id.split("upload")[1];
   const file = $(`#${event.target.id}`)[0].files[0];
   if (file) {
     var reader = new FileReader();
-    const fileType = file.type.split('/')[0];
-    if (fileType == 'image') {
+    const fileType = file.type.split("/")[0];
+    if (fileType == "image") {
       reader.addEventListener(
-        'load',
+        "load",
         function () {
           $(`#img${id}`)[0].src = reader.result;
         },
@@ -18,143 +18,143 @@ $('.input').change((event) => {
   }
 });
 
-$('.submit').click(async (event) => {
+$(".submit").click(async (event) => {
   event.preventDefault();
   const id = event.target.id;
   let formData = new FormData();
-  const tag = $(`#desc${id}`).val();
-  const year = $(`#year${id}`).val();
+  const tag = $(`#desc${id}`).val().toUpperCase();
+  const year = $(`#year${id}`).val().toUpperCase();
   const file = $(`#upload${id}`)[0].files[0];
-  formData.append('id', id);
-  formData.append('year', year);
-  formData.append('tag', tag);
-  formData.append('file', file);
+  formData.append("id", id);
+  formData.append("year", year);
+  formData.append("tag", tag);
+  formData.append("file", file);
   if (file) {
-    const fileType = file.type.split('/')[0];
-    if (fileType == 'image') {
+    const fileType = file.type.split("/")[0];
+    if (fileType == "image") {
       $.ajax({
-        url: '/images/edit-work',
+        url: "/images/edit-work",
         data: formData,
-        type: 'POST',
+        type: "POST",
         processData: false,
         contentType: false,
         success: function () {
-          $(`#desc${id}`).val('');
-          $(`#year${id}`).val('');
-          $(`#upload${id}`).val('');
+          $(`#desc${id}`).val("");
+          $(`#year${id}`).val("");
+          $(`#upload${id}`).val("");
           if (tag) {
-            $(`#desc${id}`).attr('placeholder', tag);
+            $(`#desc${id}`).attr("placeholder", tag);
           }
           if (year) {
-            $(`#year${id}`).attr('placeholder', year);
+            $(`#year${id}`).attr("placeholder", year);
           }
-          var toast = document.getElementById('snackbar');
+          var toast = document.getElementById("snackbar");
           toast.innerHTML = `Photo ${id} has been modified!`;
-          toast.className = 'show';
+          toast.className = "show";
           setTimeout(function () {
-            toast.className = toast.className.replace('show', '');
+            toast.className = toast.className.replace("show", "");
           }, 3000);
         },
         error: function () {
-          var toast = document.getElementById('snackbar');
+          var toast = document.getElementById("snackbar");
           toast.innerHTML = `Error: Could not update photo ${id}.`;
-          toast.className = 'error';
+          toast.className = "error";
           setTimeout(function () {
-            toast.className = toast.className.replace('error', '');
+            toast.className = toast.className.replace("error", "");
           }, 3000);
         },
       });
     } else {
-      alert('Can only upload image files.');
+      alert("Can only upload image files.");
     }
   } else {
     $.ajax({
-      url: '/images/edit-work',
+      url: "/images/edit-work",
       data: formData,
-      type: 'POST',
+      type: "POST",
       processData: false,
       contentType: false,
       success: function () {
-        $(`#desc${id}`).val('');
-        $(`#year${id}`).val('');
-        $(`#upload${id}`).val('');
+        $(`#desc${id}`).val("");
+        $(`#year${id}`).val("");
+        $(`#upload${id}`).val("");
         if (tag) {
-          $(`#desc${id}`).attr('placeholder', tag);
+          $(`#desc${id}`).attr("placeholder", tag);
         }
         if (year) {
-          $(`#year${id}`).attr('placeholder', year);
+          $(`#year${id}`).attr("placeholder", year);
         }
-        var toast = document.getElementById('snackbar');
+        var toast = document.getElementById("snackbar");
         toast.innerHTML = `Picture ${id} has been modified!`;
-        toast.className = 'show';
+        toast.className = "show";
         setTimeout(function () {
-          toast.className = toast.className.replace('show', '');
+          toast.className = toast.className.replace("show", "");
         }, 3000);
       },
       error: function () {
-        var toast = document.getElementById('snackbar');
+        var toast = document.getElementById("snackbar");
         toast.innerHTML = `Error: Could not update photo ${id}.`;
-        toast.className = 'error';
+        toast.className = "error";
         setTimeout(function () {
-          toast.className = toast.className.replace('error', '');
+          toast.className = toast.className.replace("error", "");
         }, 3000);
       },
     });
   }
 });
 
-$('.homeTextForm').submit(async (event) => {
+$(".homeTextForm").submit(async (event) => {
   event.preventDefault();
-  const textTop = $('#homeTextOne').val();
-  const textBottom = $('#homeTextTwo').val();
+  const textTop = $("#homeTextOne").val().toUpperCase();
+  const textBottom = $("#homeTextTwo").val().toUpperCase();
   await $.ajax({
-    url: '/texts/edit-homepage',
-    type: 'POST',
+    url: "/texts/edit-homepage",
+    type: "POST",
     data: {
       firstLine: textTop,
       secondLine: textBottom,
     },
     success: function () {
-      $('#homeTextOne').val('');
-      $('#homeTextTwo').val('');
-      var toast = document.getElementById('snackbar');
-      toast.innerHTML = 'Home Page Text Modified.';
-      toast.className = 'show';
+      $("#homeTextOne").val("");
+      $("#homeTextTwo").val("");
+      var toast = document.getElementById("snackbar");
+      toast.innerHTML = "Home Page Text Modified.";
+      toast.className = "show";
       setTimeout(function () {
-        toast.className = toast.className.replace('show', '');
+        toast.className = toast.className.replace("show", "");
       }, 3000);
     },
     error: function (request, msg, error) {
-      console.log('failed');
+      console.log("failed");
     },
   });
 });
 
-$('.aboutTextForm').submit(async (event) => {
+$(".aboutTextForm").submit(async (event) => {
   event.preventDefault();
-  const text = $('#aboutText').val();
+  const text = $("#aboutText").val().toUpperCase();
   await $.ajax({
-    url: '/texts/edit-aboutme',
-    type: 'POST',
+    url: "/texts/edit-aboutme",
+    type: "POST",
     data: {
       content: text,
     },
     success: function () {
-      $('#aboutText').val('');
-      var toast = document.getElementById('snackbar');
-      toast.innerHTML = 'About Me Text Modified.';
-      toast.className = 'show';
+      $("#aboutText").val("");
+      var toast = document.getElementById("snackbar");
+      toast.innerHTML = "About Me Text Modified.";
+      toast.className = "show";
       setTimeout(function () {
-        toast.className = toast.className.replace('show', '');
+        toast.className = toast.className.replace("show", "");
       }, 3000);
     },
     error: function () {
-      var toast = document.getElementById('snackbar');
+      var toast = document.getElementById("snackbar");
       toast.innerHTML =
-        'Error: Something went wrong trying to update the About Me.';
-      toast.className = 'error';
+        "Error: Something went wrong trying to update the About Me.";
+      toast.className = "error";
       setTimeout(function () {
-        toast.className = toast.className.replace('error', '');
+        toast.className = toast.className.replace("error", "");
       }, 3000);
     },
   });

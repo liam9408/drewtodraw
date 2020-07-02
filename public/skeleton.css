@@ -22,9 +22,13 @@
 
 .container {
   position: relative;
-  width: 1320px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .container .column,
 .container .columns {
@@ -109,7 +113,7 @@
   padding-left: 220px;
 }
 .container .offset-by-three {
-  padding-left: 330px;
+  padding-left: 500px;
 }
 .container .offset-by-four {
   padding-left: 440px;
