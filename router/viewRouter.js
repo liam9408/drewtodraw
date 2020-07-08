@@ -39,9 +39,11 @@ module.exports = (express) => {
   router.get('/edit', isLoggedIn, async (req, res) => {
     let workImages = await imageService.showWork();
     let aboutMeImage = await imageService.showAboutMe();
+    let heroImage = await imageService.showHero();
     res.render('edit', {
-      workImages: workImages,
-      aboutMeImage: aboutMeImage,
+      workImages,
+      aboutMeImage,
+      heroImage,
     });
   });
 

@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 require('dotenv').config();
 
 //-------------- Router package setup
-const ViewRouter = require('./Router/viewRouter')(express);
+const ViewRouter = require('./router/viewRouter')(express);
 
 //-------------- setting up database connection
 const knexConfig = require('./knexfile').development;

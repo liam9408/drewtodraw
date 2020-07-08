@@ -18,6 +18,7 @@ class ImageRouter {
     let router = express.Router();
     router.get('/get-work', this.getWork.bind(this));
     router.get('/get-aboutme', this.getAboutMe.bind(this));
+    router.get('/get-hero', this.getHero.bind(this));
     router.post('/edit-work', isLoggedIn, this.editWork.bind(this));
     return router;
   }
@@ -30,6 +31,12 @@ class ImageRouter {
   getAboutMe(req, res) {
     return this.imageService
       .showAboutMe()
+      .then((data) => res.json(data))
+      .catch((err) => res.status(500).json(err));
+  }
+  getHero(req, res) {
+    return this.imageService
+      .showHero()
       .then((data) => res.json(data))
       .catch((err) => res.status(500).json(err));
   }

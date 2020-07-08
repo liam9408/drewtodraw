@@ -1,6 +1,11 @@
 #split {
   display: flex;
   flex-direction: row;
+  background-color:#f7f7f7;
+}
+
+.padding-title-top {
+  padding-top:10% !important;
 }
 
 #upload-section {
@@ -48,7 +53,6 @@
   align-items: center;
   margin-bottom: 10px;
   margin-top: 10px;
-  background: white;
   width: 500px;
   height: 150px;
 
@@ -167,5 +171,8 @@
   }
   #aboutText {
     width: 85vw;
+  }
+  .padding-title-top {
+    padding-top:20% !important;
   }
 }

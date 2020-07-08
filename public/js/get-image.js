@@ -3,7 +3,7 @@ $(() => {
 
   const getWork = () => {
     $.ajax({
-      url: `${port + "/images/get-work"} `,
+      url: "/images/get-work",
       success: function (res) {
         const imageOnePath = res[0].image_path;
         const imageTwoPath = res[1].image_path;
@@ -54,7 +54,7 @@ $(() => {
 
   const getAboutMe = () => {
     $.ajax({
-      url: `${port + "/texts/get-aboutme"} `,
+      url: "/texts/get-aboutme",
       success: function (res) {
         $("#about-me-body").html(res);
       },
@@ -63,9 +63,8 @@ $(() => {
 
   const getHomePage = () => {
     $.ajax({
-      url: `${port + "/texts/get-homepage"} `,
+      url: "/texts/get-homepage",
       success: function (res) {
-        console.log(res);
         $("#hero-text").html(
           "<span>" +
             res[0].content +

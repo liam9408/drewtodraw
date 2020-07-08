@@ -53,7 +53,27 @@
                 </form>
             </div>
             {{/each}}
-
+            
+            {{#each heroImage}}
+            <div class="upload-pictures" id={{id}}>
+                <div class="edit-picture">
+                    <img id=img{{id}} src=../{{image_path}} alt="" class="image1">
+                </div>
+                <form id={{id}}form class="form" action="/images/edit-work" method="POST" encType="multipart/form-data">
+                    <div class="form-group">
+                        <label for="hero-text">Homepage Image</label>
+                        <label>
+                            <input id=upload{{id}} type='file' name="file" class="form-control input" />
+                        </label>
+                        <label>
+                            <input id=id{{id}} type='text' name="id" class="form-control" value={{id}}
+                                style="display:none;" />
+                        </label>
+                        <input id={{id}} type='submit' value="Upload" class="btn btn-primary submit" />
+                    </div>
+                </form>
+            </div>
+            {{/each}}
 
 
         </div>

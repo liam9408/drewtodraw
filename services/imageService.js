@@ -29,7 +29,20 @@ class AttractionService {
           resolve(data);
         })
         .catch((err) => {
-          reject({ success: 0, error: 'homepage text could not be grabbed' });
+          reject({ success: 0, error: 'About me image could not be grabbed' });
+        });
+    });
+  }
+
+  showHero() {
+    return new Promise(async (resolve, reject) => {
+      let aboutMe = this.knex('images').select('*').where('id', 12);
+      aboutMe
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((err) => {
+          reject({ success: 0, error: 'Hero image could not be grabbed' });
         });
     });
   }
