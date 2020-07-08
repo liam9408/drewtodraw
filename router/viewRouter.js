@@ -20,8 +20,11 @@ module.exports = (express) => {
     res.render('login');
   }
 
-  router.get('/', (req, res) => {
-    res.render('work');
+  router.get('/', async (req, res) => {
+    let heroImage = await imageService.showHero();
+    res.render('work', {
+      hero: heroImage[0],
+    });
   });
 
   router.get('/about', (req, res) => {
