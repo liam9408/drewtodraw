@@ -1,10 +1,10 @@
 //-------------- Setting up required packages
-const path = require('path');
-const knexConfig = require('../knexfile').development;
-const knex = require('knex')(knexConfig);
+const path = require("path");
+const knexConfig = require("../knexfile").development;
+const knex = require("knex")(knexConfig);
 
 //-------------- Setting up required services
-const ImageService = require('../services/imageService');
+const ImageService = require("../services/imageService");
 const imageService = new ImageService(knex);
 
 module.exports = (express) => {
@@ -17,33 +17,33 @@ module.exports = (express) => {
       return next();
     }
     // if not logged in, redirect to the landing page
-    res.render('login');
+    res.render("login");
   }
 
-  router.get('/', async (req, res) => {
+  router.get("/", async (req, res) => {
     let heroImage = await imageService.showHero();
-    res.render('work', {
+    res.render("work", {
       hero: heroImage[0],
     });
   });
 
-  router.get('/about', (req, res) => {
-    res.render('about');
+  router.get("/about", (req, res) => {
+    res.render("about");
   });
 
-  router.get('/contact', (req, res) => {
-    res.render('contact');
+  router.get("/contact", (req, res) => {
+    res.render("contact");
   });
 
-  router.get('/login', (req, res) => {
-    res.render('login');
+  router.get("/login", (req, res) => {
+    res.render("login");
   });
 
-  router.get('/edit', isLoggedIn, async (req, res) => {
+  router.get("/edit", isLoggedIn, async (req, res) => {
     let workImages = await imageService.showWork();
     let aboutMeImage = await imageService.showAboutMe();
     let heroImage = await imageService.showHero();
-    res.render('edit', {
+    res.render("edit", {
       workImages,
       aboutMeImage,
       heroImage,

@@ -167,6 +167,15 @@ html {
 }
 /* #Typography
 ================================================== */
+
+@font-face {
+  font-family: "woolkarth-boldbold";
+  src: url("./font/woolkarth-bold_bold-webfont.woff2") format("woff2"),
+    url("./font/woolkarth-bold_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1,
 h2,
 h3,
